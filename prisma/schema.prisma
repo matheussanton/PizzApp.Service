@@ -68,7 +68,6 @@ model Order {
 
 model OrderItem {
   id     String @id @default(uuid())
-  name   String
   amount Int
 
   createdAt DateTime? @default(now())
