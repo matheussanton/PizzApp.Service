@@ -8,6 +8,7 @@ import { CreateCategoryController } from "./controllers/category/CreateCategoryC
 import { ListCategoryController } from "./controllers/category/ListCategoryController"
 import { CreateProductController } from "./controllers/product/CreateProductController"
 import { ListByCategoryController } from "./controllers/product/ListByCategoryController"
+import { ListAllProductsController } from "./controllers/product/ListAllProductsController"
 import { CreateOrderController } from "./controllers/order/CreateOrderController"
 import { RemoveOrderController } from "./controllers/order/RemoveOrderController"
 import { SendOrderController } from "./controllers/order/SendOrderController"
@@ -44,6 +45,8 @@ router.get("/category", isAuthenticated, new ListCategoryController().handle);
 router.post("/product", isAuthenticated, upload.single("file"), new CreateProductController().handle);
 
 router.get("/product/by-category", isAuthenticated, new ListByCategoryController().handle);
+
+router.get("/product", isAuthenticated, new ListAllProductsController().handle);
 //#endregion Product Routes
 
 //#region Order Routes
