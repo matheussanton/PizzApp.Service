@@ -46,7 +46,7 @@ router.post("/product", isAuthenticated, upload.single("file"), new CreateProduc
 
 router.get("/product/by-category", isAuthenticated, new ListByCategoryController().handle);
 
-router.get("/product", isAuthenticated, new ListAllProductsController().handle);
+router.get("/product", new ListAllProductsController().handle);
 //#endregion Product Routes
 
 //#region Order Routes
